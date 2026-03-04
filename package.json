@@ -1,11 +1,11 @@
 {
   "type": "module",
-  "name": "nostr-tools",
-  "version": "2.23.3",
-  "description": "Tools for making a Nostr client.",
+  "name": "@windbit/ion-nostr-js",
+  "version": "1.0.0",
+  "description": "Tools for making a ION Nostr client.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nbd-wtf/nostr-tools.git"
+    "url": "https://github.com/windbit/ion-nostr-js.git"
   },
   "files": [
     "lib"
@@ -275,6 +275,126 @@
       "import": "./lib/esm/utils.js",
       "require": "./lib/cjs/utils.js",
       "types": "./lib/types/utils.d.ts"
+    },
+    "./icip01": {
+      "source": "./icip01.ts",
+      "import": "./lib/esm/icip01.js",
+      "require": "./lib/cjs/icip01.js",
+      "types": "./lib/types/icip01.d.ts"
+    },
+    "./icip11": {
+      "source": "./icip11.ts",
+      "import": "./lib/esm/icip11.js",
+      "require": "./lib/cjs/icip11.js",
+      "types": "./lib/types/icip11.d.ts"
+    },
+    "./icip17": {
+      "source": "./icip17.ts",
+      "import": "./lib/esm/icip17.js",
+      "require": "./lib/cjs/icip17.js",
+      "types": "./lib/types/icip17.d.ts"
+    },
+    "./icip44": {
+      "source": "./icip44.ts",
+      "import": "./lib/esm/icip44.js",
+      "require": "./lib/cjs/icip44.js",
+      "types": "./lib/types/icip44.d.ts"
+    },
+    "./icip51": {
+      "source": "./icip51.ts",
+      "import": "./lib/esm/icip51.js",
+      "require": "./lib/cjs/icip51.js",
+      "types": "./lib/types/icip51.d.ts"
+    },
+    "./icip94": {
+      "source": "./icip94.ts",
+      "import": "./lib/esm/icip94.js",
+      "require": "./lib/cjs/icip94.js",
+      "types": "./lib/types/icip94.d.ts"
+    },
+    "./icip1000": {
+      "source": "./icip1000.ts",
+      "import": "./lib/esm/icip1000.js",
+      "require": "./lib/cjs/icip1000.js",
+      "types": "./lib/types/icip1000.d.ts"
+    },
+    "./icip2000": {
+      "source": "./icip2000.ts",
+      "import": "./lib/esm/icip2000.js",
+      "require": "./lib/cjs/icip2000.js",
+      "types": "./lib/types/icip2000.d.ts"
+    },
+    "./icip2001": {
+      "source": "./icip2001.ts",
+      "import": "./lib/esm/icip2001.js",
+      "require": "./lib/cjs/icip2001.js",
+      "types": "./lib/types/icip2001.d.ts"
+    },
+    "./icip3000": {
+      "source": "./icip3000.ts",
+      "import": "./lib/esm/icip3000.js",
+      "require": "./lib/cjs/icip3000.js",
+      "types": "./lib/types/icip3000.d.ts"
+    },
+    "./icip4000": {
+      "source": "./icip4000.ts",
+      "import": "./lib/esm/icip4000.js",
+      "require": "./lib/cjs/icip4000.js",
+      "types": "./lib/types/icip4000.d.ts"
+    },
+    "./icip5000": {
+      "source": "./icip5000.ts",
+      "import": "./lib/esm/icip5000.js",
+      "require": "./lib/cjs/icip5000.js",
+      "types": "./lib/types/icip5000.d.ts"
+    },
+    "./icip6000": {
+      "source": "./icip6000.ts",
+      "import": "./lib/esm/icip6000.js",
+      "require": "./lib/cjs/icip6000.js",
+      "types": "./lib/types/icip6000.d.ts"
+    },
+    "./icip7000": {
+      "source": "./icip7000.ts",
+      "import": "./lib/esm/icip7000.js",
+      "require": "./lib/cjs/icip7000.js",
+      "types": "./lib/types/icip7000.d.ts"
+    },
+    "./icip7001": {
+      "source": "./icip7001.ts",
+      "import": "./lib/esm/icip7001.js",
+      "require": "./lib/cjs/icip7001.js",
+      "types": "./lib/types/icip7001.d.ts"
+    },
+    "./icip8000": {
+      "source": "./icip8000.ts",
+      "import": "./lib/esm/icip8000.js",
+      "require": "./lib/cjs/icip8000.js",
+      "types": "./lib/types/icip8000.d.ts"
+    },
+    "./icip9000": {
+      "source": "./icip9000.ts",
+      "import": "./lib/esm/icip9000.js",
+      "require": "./lib/cjs/icip9000.js",
+      "types": "./lib/types/icip9000.d.ts"
+    },
+    "./icip10000": {
+      "source": "./icip10000.ts",
+      "import": "./lib/esm/icip10000.js",
+      "require": "./lib/cjs/icip10000.js",
+      "types": "./lib/types/icip10000.d.ts"
+    },
+    "./icip11000": {
+      "source": "./icip11000.ts",
+      "import": "./lib/esm/icip11000.js",
+      "require": "./lib/cjs/icip11000.js",
+      "types": "./lib/types/icip11000.d.ts"
+    },
+    "./icip-dvm": {
+      "source": "./icip-dvm.ts",
+      "import": "./lib/esm/icip-dvm.js",
+      "require": "./lib/cjs/icip-dvm.js",
+      "types": "./lib/types/icip-dvm.d.ts"
     }
   },
   "license": "Unlicense",
@@ -285,6 +405,7 @@
     "@scure/base": "2.0.0",
     "@scure/bip32": "2.0.1",
     "@scure/bip39": "2.0.1",
+    "fflate": "^0.8.2",
     "nostr-wasm": "0.1.0"
   },
   "peerDependencies": {
@@ -300,7 +421,8 @@
     "social",
     "censorship-resistance",
     "client",
-    "nostr"
+    "nostr",
+    "ion"
   ],
   "devDependencies": {
     "@types/node": "^18.13.0",

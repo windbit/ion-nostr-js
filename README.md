@@ -1,4 +1,4 @@
-# [![JSR](https://jsr.io/badges/@nostr/tools)](https://jsr.io/@nostr/tools) @nostr/tools
+# [![JSR](https://jsr.io/badges/@windbit/ion-nostr-js)](https://jsr.io/@windbit/ion-nostr-js) @windbit/ion-nostr-js
 
 Tools for developing [Nostr](https://github.com/fiatjaf/nostr) clients.
 
@@ -10,21 +10,21 @@ This package is only providing lower-level functionality. If you want higher-lev
 
 ```bash
 # jsr
-npx jsr add @nostr/tools
+npx jsr add @windbit/ion-nostr-js
 ```
 
 If using TypeScript, this package requires TypeScript >= 5.0.
 
 ## Documentation
 
-https://jsr.io/@nostr/tools/doc
+https://jsr.io/@windbit/ion-nostr-js/doc
 
 ## Usage
 
 ### Generating a private key and a public key
 
 ```js
-import { generateSecretKey, getPublicKey } from '@nostr/tools/pure'
+import { generateSecretKey, getPublicKey } from '@windbit/ion-nostr-js/pure'
 
 let sk = generateSecretKey() // `sk` is a Uint8Array
 let pk = getPublicKey(sk) // `pk` is a hex string
@@ -42,7 +42,7 @@ let backToBytes = hexToBytes(skHex)
 ### Creating, signing and verifying events
 
 ```js
-import { finalizeEvent, verifyEvent } from '@nostr/tools/pure'
+import { finalizeEvent, verifyEvent } from '@windbit/ion-nostr-js/pure'
 
 let event = finalizeEvent({
   kind: 1,
@@ -59,8 +59,8 @@ let isGood = verifyEvent(event)
 Doesn't matter what you do, you always should be using a `SimplePool`:
 
 ```js
-import { finalizeEvent, generateSecretKey, getPublicKey } from '@nostr/tools/pure'
-import { SimplePool } from '@nostr/tools/pool'
+import { finalizeEvent, generateSecretKey, getPublicKey } from '@windbit/ion-nostr-js/pure'
+import { SimplePool } from '@windbit/ion-nostr-js/pool'
 
 const pool = new SimplePool()
 
@@ -123,8 +123,8 @@ relay.close()
 To use this on Node.js you first must install `ws` and call something like this:
 
 ```js
-import { useWebSocketImplementation } from '@nostr/tools/pool'
-// or import { useWebSocketImplementation } from '@nostr/tools/relay' if you're using the Relay directly
+import { useWebSocketImplementation } from '@windbit/ion-nostr-js/pool'
+// or import { useWebSocketImplementation } from '@windbit/ion-nostr-js/relay' if you're using the Relay directly
 
 import WebSocket from 'ws'
 useWebSocketImplementation(WebSocket)
@@ -135,7 +135,7 @@ useWebSocketImplementation(WebSocket)
 You can enable regular pings of connected relays with the `enablePing` option. This will set up a heartbeat that closes the websocket if it doesn't receive a response in time. Some platforms, like Node.js, don't report websocket disconnections due to network issues, and enabling this can increase the reliability of the `onclose` event.
 
 ```js
-import { SimplePool } from '@nostr/tools/pool'
+import { SimplePool } from '@windbit/ion-nostr-js/pool'
 
 const pool = new SimplePool({ enablePing: true })
 ```
@@ -145,7 +145,7 @@ const pool = new SimplePool({ enablePing: true })
 You can also enable automatic reconnection with the `enableReconnect` option. This will make the pool try to reconnect to relays with an exponential backoff delay if the connection is lost unexpectedly.
 
 ```js
-import { SimplePool } from '@nostr/tools/pool'
+import { SimplePool } from '@windbit/ion-nostr-js/pool'
 
 const pool = new SimplePool({ enableReconnect: true })
 ```
@@ -162,7 +162,7 @@ When reconnecting, all existing subscriptions will have their filters automatica
 ### Parsing references (mentions) from a content based on NIP-27
 
 ```js
-import * as nip27 from '@nostr/tools/nip27'
+import * as nip27 from '@windbit/ion-nostr-js/nip27'
 
 for (let block of nip27.parse(evt.content)) {
   switch (block.type) {
@@ -204,7 +204,7 @@ for (let block of nip27.parse(evt.content)) {
 A local secret key is required for the client to communicate securely with the bunker. This key should generally be persisted for the user's session.
 
 ```js
-import { generateSecretKey } from '@nostr/tools/pure'
+import { generateSecretKey } from '@windbit/ion-nostr-js/pure'
 
 const localSecretKey = generateSecretKey()
 ```
@@ -214,8 +214,8 @@ const localSecretKey = generateSecretKey()
 This is the bunker-initiated flow. Your client receives a `bunker://` string or a NIP-05 identifier from the user. You use `BunkerSigner.fromBunker()` to create an instance, which returns immediately. For the **initial connection** with a new bunker, you must explicitly call `await bunker.connect()` to establish the connection and receive authorization.
 
 ```js
-import { BunkerSigner, parseBunkerInput } from '@nostr/tools/nip46'
-import { SimplePool } from '@nostr/tools/pool'
+import { BunkerSigner, parseBunkerInput } from '@windbit/ion-nostr-js/nip46'
+import { SimplePool } from '@windbit/ion-nostr-js/pool'
 
 // parse a bunker URI
 const bunkerPointer = await parseBunkerInput('bunker://abcd...?relay=wss://relay.example.com')
@@ -250,9 +250,9 @@ This is the client-initiated flow, which generally provides a better user experi
 `BunkerSigner.fromURI()` is an **asynchronous** method. It returns a `Promise` that resolves only after the bunker has successfully connected. Therefore, the returned signer instance is already fully connected and ready to use, so you **do not** need to call `.connect()` on it.
 
 ```js
-import { getPublicKey } from '@nostr/tools/pure'
-import { BunkerSigner, createNostrConnectURI } from '@nostr/tools/nip46'
-import { SimplePool } from '@nostr/tools/pool'
+import { getPublicKey } from '@windbit/ion-nostr-js/pure'
+import { BunkerSigner, createNostrConnectURI } from '@windbit/ion-nostr-js/nip46'
+import { SimplePool } from '@windbit/ion-nostr-js/pool'
 
 const clientPubkey = getPublicKey(localSecretKey)
 
@@ -286,7 +286,7 @@ pool.close([])
 ### Parsing thread from any note based on NIP-10
 
 ```js
-import * as nip10 from '@nostr/tools/nip10'
+import * as nip10 from '@windbit/ion-nostr-js/nip10'
 
 // event is a nostr event with tags
 const refs = nip10.parse(event)
@@ -328,7 +328,7 @@ for (let profile of refs.profiles) {
 ### Querying profile data from a NIP-05 address
 
 ```js
-import { queryProfile } from '@nostr/tools/nip05'
+import { queryProfile } from '@windbit/ion-nostr-js/nip05'
 
 let profile = await queryProfile('jb55.com')
 console.log(profile.pubkey)
@@ -340,13 +340,13 @@ console.log(profile.relays)
 To use this on Node.js < v18, you first must install `node-fetch@2` and call something like this:
 
 ```js
-import { useFetchImplementation } from '@nostr/tools/nip05'
+import { useFetchImplementation } from '@windbit/ion-nostr-js/nip05'
 useFetchImplementation(require('node-fetch'))
 ```
 
 ### Including NIP-07 types
 ```js
-import type { WindowNostr } from '@nostr/tools/nip07'
+import type { WindowNostr } from '@windbit/ion-nostr-js/nip07'
 
 declare global {
   interface Window {
@@ -358,8 +358,8 @@ declare global {
 ### Encoding and decoding NIP-19 codes
 
 ```js
-import { generateSecretKey, getPublicKey } from '@nostr/tools/pure'
-import * as nip19 from '@nostr/tools/nip19'
+import { generateSecretKey, getPublicKey } from '@windbit/ion-nostr-js/pure'
+import * as nip19 from '@windbit/ion-nostr-js/nip19'
 
 let sk = generateSecretKey()
 let nsec = nip19.nsecEncode(sk)
@@ -387,7 +387,7 @@ assert(data.relays.length === 2)
 [`nostr-wasm`](https://github.com/fiatjaf/nostr-wasm) is a thin wrapper over [libsecp256k1](https://github.com/bitcoin-core/secp256k1) compiled to WASM just for hashing, signing and verifying Nostr events.
 
 ```js
-import { setNostrWasm, generateSecretKey, finalizeEvent, verifyEvent } from '@nostr/tools/wasm'
+import { setNostrWasm, generateSecretKey, finalizeEvent, verifyEvent } from '@windbit/ion-nostr-js/wasm'
 import { initNostrWasm } from 'nostr-wasm'
 
 // make sure this promise resolves before your app starts calling finalizeEvent or verifyEvent
@@ -400,9 +400,9 @@ initNostrWasm().then(setNostrWasm)
 If you're going to use `Relay` and `SimplePool` you must also import `nostr-tools/abstract-relay` and/or `nostr-tools/abstract-pool` instead of the defaults and then instantiate them by passing the `verifyEvent`:
 
 ```js
-import { setNostrWasm, verifyEvent } from '@nostr/tools/wasm'
-import { AbstractRelay } from '@nostr/tools/abstract-relay'
-import { AbstractSimplePool } from '@nostr/tools/abstract-pool'
+import { setNostrWasm, verifyEvent } from '@windbit/ion-nostr-js/wasm'
+import { AbstractRelay } from '@windbit/ion-nostr-js/abstract-relay'
+import { AbstractSimplePool } from '@windbit/ion-nostr-js/abstract-pool'
 import { initNostrWasm } from 'nostr-wasm'
 
 initNostrWasm().then(setNostrWasm)
@@ -439,7 +439,7 @@ summary for relay read message and verify event
 
 ## Plumbing
 
-To develop `@nostr/tools`, install [`just`](https://just.systems/) and run `just -l` to see commands available.
+To develop `@windbit/ion-nostr-js`, install [`just`](https://just.systems/) and run `just -l` to see commands available.
 
 ## License
 

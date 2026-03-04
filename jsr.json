@@ -1,6 +1,6 @@
 {
-  "name": "@nostr/tools",
-  "version": "2.23.3",
+  "name": "@windbit/ion-nostr-js",
+  "version": "1.0.0",
   "exports": {
     ".": "./index.ts",
     "./core": "./core.ts",
@@ -45,6 +45,26 @@
     "./nipb7": "./nipb7.ts",
     "./fakejson": "./fakejson.ts",
     "./utils": "./utils.ts",
-    "./signer": "./signer.ts"
+    "./signer": "./signer.ts",
+    "./icip01": "./icip01.ts",
+    "./icip11": "./icip11.ts",
+    "./icip17": "./icip17.ts",
+    "./icip44": "./icip44.ts",
+    "./icip51": "./icip51.ts",
+    "./icip94": "./icip94.ts",
+    "./icip1000": "./icip1000.ts",
+    "./icip2000": "./icip2000.ts",
+    "./icip2001": "./icip2001.ts",
+    "./icip3000": "./icip3000.ts",
+    "./icip4000": "./icip4000.ts",
+    "./icip5000": "./icip5000.ts",
+    "./icip6000": "./icip6000.ts",
+    "./icip7000": "./icip7000.ts",
+    "./icip7001": "./icip7001.ts",
+    "./icip8000": "./icip8000.ts",
+    "./icip9000": "./icip9000.ts",
+    "./icip10000": "./icip10000.ts",
+    "./icip11000": "./icip11000.ts",
+    "./icip-dvm": "./icip-dvm.ts"
   }
 }

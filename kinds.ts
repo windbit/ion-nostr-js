@@ -221,3 +221,105 @@ export const CommunityDefinition = 34550
 export type CommunityDefinition = typeof CommunityDefinition
 export const GroupMetadata = 39000
 export type GroupMetadata = typeof GroupMetadata
+
+// --- ION Connect Protocol (ICIP) Event Kinds ---
+
+/** ICIP-11000: Community token action notification (buy/sell/swap) */
+export const TokenAction = 1175
+export type TokenAction = typeof TokenAction
+/** ICIP-3000: Join or invite to a community */
+export const CommunityJoin = 1750
+export type CommunityJoin = typeof CommunityJoin
+/** ICIP-3000: Transfer community ownership */
+export const CommunityTransfer = 1751
+export type CommunityTransfer = typeof CommunityTransfer
+/** ICIP-3000: Ban user from community */
+export const CommunityBan = 1752
+export type CommunityBan = typeof CommunityBan
+/** ICIP-3000: Chronological patch to community definition */
+export const CommunityChange = 1753
+export type CommunityChange = typeof CommunityChange
+/** ICIP-5000: Vote on a poll */
+export const PollVote = 1754
+export type PollVote = typeof PollVote
+/** ICIP-6000: Request to receive funds/assets */
+export const RequestFunds = 1755
+export type RequestFunds = typeof RequestFunds
+/** ICIP-6000: Notify sending of funds/assets */
+export const SendNotify = 1756
+export type SendNotify = typeof SendNotify
+/** ICIP-17: Block a user */
+export const BlockUser = 1757
+export type BlockUser = typeof BlockUser
+/** ICIP-9000: Fiat payment proof */
+export const FiatPaymentProof = 1758
+export type FiatPaymentProof = typeof FiatPaymentProof
+/** ICIP-2001: Affiliation request between users */
+export const AffiliationRequest = 1759
+export type AffiliationRequest = typeof AffiliationRequest
+/** ICIP-17: Archive a conversation */
+export const ArchiveConversation = 2175
+export type ArchiveConversation = typeof ArchiveConversation
+/** ICIP-17: Mute a user */
+export const MuteUser = 3175
+export type MuteUser = typeof MuteUser
+/** ICIP-11000: User consent for token activity display */
+export const ActivityConsent = 4175
+export type ActivityConsent = typeof ActivityConsent
+/** ICIP-5175: DVM job request — hashtag statistics */
+export const DVMHashtagStats = 5175
+export type DVMHashtagStats = typeof DVMHashtagStats
+/** ICIP-5176: DVM job request — price changes for tokenized communities */
+export const DVMPriceChanges = 5176
+export type DVMPriceChanges = typeof DVMPriceChanges
+/** ICIP-5177: DVM job request — global token statistics */
+export const DVMTokenStats = 5177
+export type DVMTokenStats = typeof DVMTokenStats
+/** ICIP-5178: DVM job request — buying activity inspection */
+export const DVMBuyingActivity = 5178
+export type DVMBuyingActivity = typeof DVMBuyingActivity
+/** ICIP-5175: DVM response — hashtag statistics */
+export const DVMHashtagStatsResponse = 6175
+export type DVMHashtagStatsResponse = typeof DVMHashtagStatsResponse
+/** ICIP-5176: DVM response — price changes */
+export const DVMPriceChangesResponse = 6176
+export type DVMPriceChangesResponse = typeof DVMPriceChangesResponse
+/** ICIP-5177: DVM response — global token statistics */
+export const DVMTokenStatsResponse = 6177
+export type DVMTokenStatsResponse = typeof DVMTokenStatsResponse
+/** ICIP-5178: DVM response — buying activity */
+export const DVMBuyingActivityResponse = 6178
+export type DVMBuyingActivityResponse = typeof DVMBuyingActivityResponse
+/** DVM: Count response */
+export const DVMCountResponse = 6400
+export type DVMCountResponse = typeof DVMCountResponse
+/** ICIP-2000: On-behalf-of attestation list */
+export const OnBehalfAttestations = 10100
+export type OnBehalfAttestations = typeof OnBehalfAttestations
+/** ICIP-51: E2EE chats and communities list */
+export const ChatsList = 11750
+export type ChatsList = typeof ChatsList
+/** ICIP-01: ION relay list metadata */
+export const IONRelayList = 20002
+export type IONRelayList = typeof IONRelayList
+/** ICIP-01: Ephemeral event embed (runtime context) */
+export const EphemeralEventEmbed = 21750
+export type EphemeralEventEmbed = typeof EphemeralEventEmbed
+/** ICIP-17: Modifiable direct message (addressable) */
+export const ModifiableDirectMessage = 30014
+export type ModifiableDirectMessage = typeof ModifiableDirectMessage
+/** ICIP-01: Modifiable note (addressable) */
+export const ModifiableNote = 30175
+export type ModifiableNote = typeof ModifiableNote
+/** ICIP-11000: Community token definition */
+export const CommunityTokenDefinition = 31175
+export type CommunityTokenDefinition = typeof CommunityTokenDefinition
+/** ICIP-3000: Community definition */
+export const IONCommunityDefinition = 31750
+export type IONCommunityDefinition = typeof IONCommunityDefinition
+/** ICIP-8000: Device token registration for push notifications */
+export const DeviceRegistration = 31751
+export type DeviceRegistration = typeof DeviceRegistration
+/** ICIP-01: Story note (expiring content) */
+export const StoryNote = 57103
+export type StoryNote = typeof StoryNote
